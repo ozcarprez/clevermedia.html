@@ -212,35 +212,27 @@
   /* STATS BAR */
   .stats-bar {
     margin: 80px 48px 0;
-    padding: 32px 48px;
+    padding: 40px 64px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 16px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .stat {
-    padding: 0 40px;
-    border-right: 1px solid var(--border);
-  }
-  .stat:first-child { padding-left: 0; }
-  .stat:last-child { border-right: none; }
-
-  .stat-n {
-    font-size: 36px;
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 6px;
+  .stats-phrase {
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 400;
+    color: var(--light);
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
   }
 
-  .stat-n span { color: var(--accent); }
-
-  .stat-l {
-    font-size: 15px;
-    color: var(--gray);
-    line-height: 1.4;
+  .stats-phrase span {
+    color: var(--accent);
+    font-weight: 600;
   }
 
   /* SERVICES */
@@ -791,9 +783,7 @@
       <div class="badge-dot"></div>
       Tijuana, Baja California
     </div>
-    <p class="hero-sub">
-      No solo diseño — <strong>entendemos tu negocio.</strong><br>Enfocados en resultados rápidos.
-    </p>
+    
   </div>
 
   <h1 class="hero-title">
@@ -810,18 +800,7 @@
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stat">
-    <div class="stat-n">En <span>vivo</span></div>
-    <div class="stat-l">Construimos juntos,<br>tú decides.</div>
-  </div>
-  <div class="stat">
-    <div class="stat-n">100<span>%</span></div>
-    <div class="stat-l">Tu idea, tal como<br>la imaginaste.</div>
-  </div>
-  <div class="stat">
-    <div class="stat-n">Siempre<span>.</span></div>
-    <div class="stat-l">Actualiza promociones,<br>info y contenido cuando quieras.</div>
-  </div>
+  <div class="stats-phrase">Diseño web rápido y a tu medida. <span>Para personas, proyectos y negocios.</span> Apoyados en IA.</div>
 </div>
 
 <!-- SERVICIOS -->
@@ -834,7 +813,7 @@
       <div class="svc-num">01</div>
       <div class="svc-arrow">↗</div>
       <h3 class="svc-name">Página Web</h3>
-      <p class="svc-desc">Tu negocio en línea, profesional y lista para atraer clientes. Diseñada para verse bien en celular y computadora.</p>
+      <p class="svc-desc">Tu presencia en línea, profesional y lista para atraer a quien buscas. Diseñada para verse bien en celular y computadora.</p>
       <div class="svc-tag">Lo más solicitado</div>
     </div>
     <div class="svc" data-num="02">
@@ -853,7 +832,7 @@
       <div class="svc-num">04</div>
       <div class="svc-arrow">↗</div>
       <h3 class="svc-name">Mejora de Procesos</h3>
-      <p class="svc-desc">¿Algo en tu negocio que se puede hacer mejor? Nos sentamos contigo, entendemos cómo trabajas y buscamos la solución juntos.</p>
+      <p class="svc-desc">¿Algo que se puede hacer mejor, más rápido o más fácil? Nos sentamos contigo, entendemos cómo trabajas y buscamos la solución juntos.</p>
     </div>
   </div>
 </section>
@@ -867,7 +846,7 @@
     <div class="plan">
       <div class="plan-label">Básico</div>
       <h3 class="plan-name">Tu página, lista.</h3>
-      <p class="plan-desc">Diseñamos y entregamos tu página web. Tu negocio con sus propias cuentas — tú tienes el control de todo.</p>
+      <p class="plan-desc">Diseñamos y entregamos tu página. Con tus propias cuentas — tú tienes el control de todo.</p>
       <ul class="plan-list">
         <li>Diseño personalizado</li>
         <li>Adaptada a celular y computadora</li>
@@ -898,8 +877,8 @@
 <section class="cta-section" id="contacto">
   <div class="cta-glow"></div>
   <h2 class="cta-title">¿Listo para<br><span>arrancar?</span></h2>
-  <p class="cta-sub">Platícanos de tu negocio. Sin compromiso, te decimos cómo podemos ayudarte.</p>
-  <a href="https://wa.me/526631261241?text=Hola%2C%20me%20interesa%20una%20página%20web%20para%20mi%20negocio" class="cta-btn" target="_blank">
+  <p class="cta-sub">Platícanos lo que quieres crear. Sin compromiso, te decimos cómo podemos ayudarte.</p>
+  <a href="https://wa.me/526631261241?text=Hola%2C%20me%20interesa%20crear%20algo%20digital" class="cta-btn" target="_blank">
     Escribir por WhatsApp
   </a>
   <p class="cta-note">Tijuana, Baja California · Clevermedia</p>
