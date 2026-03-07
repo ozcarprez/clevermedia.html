@@ -668,6 +668,44 @@
 
   .plan-btn-accent:hover { background: #2563eb; border-color: #2563eb; }
 
+  /* IDEA SECTION */
+  .idea-section {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .idea-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .idea-tag {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .idea-title {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+  }
+
+  .idea-desc {
+    font-size: 18px;
+    color: var(--gray);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
   /* CTA */
   .cta-section {
     padding: 140px 48px;
@@ -872,16 +910,16 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contacto">
-  <div class="cta-glow"></div>
-  <h2 class="cta-title">¿Listo para<br><span>arrancar?</span></h2>
-  <p class="cta-sub">Platícanos lo que quieres crear. Sin compromiso, te decimos cómo podemos ayudarte.</p>
-  <a href="https://wa.me/526631261241?text=Hola%2C%20me%20interesa%20crear%20algo%20digital" class="cta-btn" target="_blank">
-    Escribir por WhatsApp
-  </a>
-  <p class="cta-note">Tijuana, Baja California · Clevermedia</p>
+<!-- IDEA -->
+<section class="section idea-section">
+  <div class="idea-inner">
+    <div class="idea-tag">Para los curiosos</div>
+    <h2 class="idea-title">¿Tienes una idea digital?</h2>
+    <p class="idea-desc">No importa si es un proyecto personal, un negocio o algo que todavía no sabes cómo explicar.<br>Cuéntanos y lo construimos juntos.</p>
+    <a href="https://wa.me/526631261241?text=Hola%2C%20tengo%20una%20idea%20digital%20que%20quisiera%20desarrollar" class="btn-primary" target="_blank">Cuéntanos tu idea</a>
+  </div>
 </section>
+
 
 <footer>
   <a href="#" class="logo">clever<span>media</span></a>
