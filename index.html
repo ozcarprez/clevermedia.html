@@ -495,9 +495,8 @@
 <nav>
   <a href="#" class="logo">clever<span>media</span></a>
   <div class="nav-links">
-    <a href="#servicios">Servicios</a>
-    <a href="#portafolio">Portafolio</a>
-    <a href="#contacto" class="nav-btn">Cotizar gratis</a>
+    <a href="#portafolio">Proyectos</a>
+    <a href="#contacto" class="nav-btn">Contacto</a>
   </div>
 </nav>
 
@@ -507,56 +506,22 @@
   <div class="hero-glow2"></div>
 
   <h1 class="hero-title">
-    <span class="line1">Diseñamos</span><br>
-    <span class="line2">tu presencia</span><br>
-    <span class="highlight">digital.</span>
+    <span class="line1">Lo que estoy</span><br>
+    <span class="line2">construyendo</span><br>
+    <span class="highlight">ahora.</span>
   </h1>
 </section>
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stats-phrase">Diseño web rápido y a tu medida. <span>Para personas, proyectos y negocios.</span> Apoyados en IA.</div>
+  <div class="stats-phrase">Proyectos digitales para negocios, comercio y contenido.</div>
 </div>
-
-<!-- SERVICIOS -->
-<section class="section" id="servicios" style="text-align: center;">
-  <div class="tag" style="justify-content: center;">Servicios</div>
-  <h2 class="section-title">Lo que hacemos</h2>
-
-  <div class="services-grid">
-    <div class="svc" data-num="01">
-      <div class="svc-num">01</div>
-      <div class="svc-arrow">↗</div>
-      <h3 class="svc-name">Página Web</h3>
-      <p class="svc-desc">Tu presencia en línea, profesional y lista para atraer a quien buscas. Diseñada para verse bien en celular y computadora.</p>
-      <div class="svc-tag">Lo más solicitado</div>
-    </div>
-    <div class="svc" data-num="02">
-      <div class="svc-num">02</div>
-      <div class="svc-arrow">↗</div>
-      <h3 class="svc-name">Tienda en Línea</h3>
-      <p class="svc-desc">Vende tus productos las 24 horas. Con catálogo, carrito de compras y pagos integrados.</p>
-    </div>
-    <div class="svc" data-num="03">
-      <div class="svc-num">03</div>
-      <div class="svc-arrow">↗</div>
-      <h3 class="svc-name">Landing Page</h3>
-      <p class="svc-desc">Una página enfocada en convertir visitas en clientes. Perfecta para promociones, servicios o lanzamientos.</p>
-    </div>
-    <div class="svc" data-num="04">
-      <div class="svc-num">04</div>
-      <div class="svc-arrow">↗</div>
-      <h3 class="svc-name">Mejora de Procesos</h3>
-      <p class="svc-desc">¿Algo que se puede hacer mejor, más rápido o más fácil? Nos sentamos contigo, entendemos cómo trabajas y buscamos la solución juntos.</p>
-    </div>
-  </div>
-</section>
 
 <!-- PORTAFOLIO -->
 <section class="section" id="portafolio" style="text-align: center;">
   <div class="tag" style="justify-content: center;">Portafolio</div>
-  <h2 class="section-title">Proyectos recientes</h2>
-  <p class="section-sub" style="margin: 0 auto 0;">Páginas reales, para negocios reales en Tijuana.</p>
+  <h2 class="section-title">Proyectos</h2>
+  <p class="section-sub" style="margin: 0 auto 0;">Páginas y herramientas que he construido para negocios reales.</p>
 
   <div class="portfolio-grid">
 
@@ -643,10 +608,10 @@
 <!-- IDEA -->
 <section class="section idea-section" id="contacto">
   <div class="idea-inner">
-    <div class="idea-tag">Para los curiosos</div>
-    <h2 class="idea-title">¿Tienes una idea digital?</h2>
-    <p class="idea-desc">No importa si es un proyecto personal, un negocio o algo que todavía no sabes cómo explicar.<br>Cuéntanos y lo construimos juntos.</p>
-    <a href="https://wa.me/526631261241?text=Hola%2C%20tengo%20una%20idea%20digital%20que%20quisiera%20desarrollar" class="btn-primary" target="_blank">Cuéntanos tu idea</a>
+    <div class="idea-tag">Hablemos</div>
+    <h2 class="idea-title">¿Tienes una idea?</h2>
+    <p class="idea-desc">Si tienes un proyecto, un negocio o algo que todavía no sabes cómo explicar,<br>escríbeme y lo platicamos.</p>
+    <a href="https://wa.me/526631261241?text=Hola%2C%20tengo%20una%20idea%20que%20me%20gustar%C3%ADa%20platicar" class="btn-primary" target="_blank">Escríbeme por WhatsApp</a>
   </div>
 </section>
 
@@ -664,7 +629,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.svc, .proj').forEach(el => {
+  document.querySelectorAll('.proj').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(16px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
