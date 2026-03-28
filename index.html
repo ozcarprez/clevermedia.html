@@ -506,22 +506,58 @@
   <div class="hero-glow2"></div>
 
   <h1 class="hero-title">
-    <span class="line1">Lo que estoy</span><br>
-    <span class="line2">construyendo</span><br>
-    <span class="highlight">ahora.</span>
+    <span class="line1">Veo lo que</span><br>
+    <span class="line2">otros no ven</span><br>
+    <span class="highlight">en tu negocio.</span>
   </h1>
 </section>
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stats-phrase">Proyectos digitales para negocios, comercio y contenido.</div>
+  <div class="stats-phrase">Analizo negocios, detecto fricciones invisibles, y construyo <span>soluciones digitales</span> que resuelven problemas reales.</div>
 </div>
+
+<!-- CÓMO PIENSO -->
+<section class="section" style="text-align: center;">
+  <div class="tag" style="justify-content: center;">Método</div>
+  <h2 class="section-title">Cómo pienso</h2>
+
+  <div class="services-grid">
+    <div class="svc" data-num="01">
+      <span class="svc-arrow">↗</span>
+      <div class="svc-num">01</div>
+      <div class="svc-name">Detecto fricciones</div>
+      <div class="svc-desc">La mayoría de los negocios no fallan por falta de producto o clientes. Fallan por fricciones invisibles que nadie nombra.</div>
+    </div>
+
+    <div class="svc" data-num="02">
+      <span class="svc-arrow">↗</span>
+      <div class="svc-num">02</div>
+      <div class="svc-name">Leo incentivos</div>
+      <div class="svc-desc">Si entiendes qué motiva a cada persona en una transacción, puedes predecir qué va a pasar antes de que pase.</div>
+    </div>
+
+    <div class="svc" data-num="03">
+      <span class="svc-arrow">↗</span>
+      <div class="svc-num">03</div>
+      <div class="svc-name">Conecto patrones</div>
+      <div class="svc-desc">Lo que funciona en Costco tiene la misma lógica que una verdulería en Tijuana. Los principios son universales.</div>
+    </div>
+
+    <div class="svc" data-num="04">
+      <span class="svc-arrow">↗</span>
+      <div class="svc-num">04</div>
+      <div class="svc-name">Diseño soluciones</div>
+      <div class="svc-desc">A veces es una página web. A veces es una idea de distribución. A veces es una pregunta que nadie se estaba haciendo.</div>
+    </div>
+  </div>
+</section>
 
 <!-- PORTAFOLIO -->
 <section class="section" id="portafolio" style="text-align: center;">
   <div class="tag" style="justify-content: center;">Portafolio</div>
   <h2 class="section-title">Proyectos</h2>
-  <p class="section-sub" style="margin: 0 auto 0;">Páginas y herramientas que he construido para negocios reales.</p>
+  <p class="section-sub" style="margin: 0 auto 0;">Cada proyecto empezó con una pregunta: ¿qué no está viendo este negocio?</p>
 
   <div class="portfolio-grid">
 
@@ -609,8 +645,8 @@
 <section class="section idea-section" id="contacto">
   <div class="idea-inner">
     <div class="idea-tag">Hablemos</div>
-    <h2 class="idea-title">¿Tienes una idea?</h2>
-    <p class="idea-desc">Si tienes un proyecto, un negocio o algo que todavía no sabes cómo explicar,<br>escríbeme y lo platicamos.</p>
+    <h2 class="idea-title">¿Tienes un negocio que podría funcionar mejor?</h2>
+    <p class="idea-desc">Si sientes que algo en tu negocio no está funcionando como debería pero no sabes exactamente qué,<br>escríbeme. A veces una conversación cambia todo.</p>
     <a href="https://wa.me/526631261241?text=Hola%2C%20tengo%20una%20idea%20que%20me%20gustar%C3%ADa%20platicar" class="btn-primary" target="_blank">Escríbeme por WhatsApp</a>
   </div>
 </section>
@@ -629,7 +665,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.proj').forEach(el => {
+  document.querySelectorAll('.svc, .proj').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(16px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
