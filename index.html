@@ -3,16 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Óscar Pérez — Tijuana</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Óscar Pérez — Consultoría de comportamiento para negocios reales</title>
+<meta name="description" content="Aplico psicología, incentivos y comportamiento humano para encontrar lo que tu negocio no ve. Tijuana, México.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #fafaf8;
     --text: #1a1a1a;
     --gray: #6b6b6b;
+    --light-gray: #999;
     --accent: #c45d2c;
-    --border: rgba(0,0,0,0.08);
-    --card-hover: #f5f3f0;
+    --border: rgba(0,0,0,0.1);
+    --border-light: rgba(0,0,0,0.06);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,10 +26,11 @@
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
-  .container {
-    max-width: 1100px;
+  .wrap {
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 48px;
   }
@@ -36,212 +39,332 @@
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    background: rgba(250,250,248,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-light);
   }
 
   .nav-inner {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 48px;
-    height: 64px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .logo {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
+  .nav-name {
+    font-size: 15px;
     font-weight: 600;
     color: var(--text);
     text-decoration: none;
+    letter-spacing: -0.2px;
   }
 
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
   }
 
   .nav-links a {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--gray);
     text-decoration: none;
-    font-weight: 400;
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--text); }
 
   /* HERO */
   .hero {
-    padding: 160px 0 80px;
-    text-align: center;
+    padding: 140px 0 0;
+  }
+
+  .hero-top {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
   }
 
   .hero-location {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gray);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    font-size: 13px;
+    color: var(--light-gray);
+    letter-spacing: 0.04em;
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 4.5vw, 58px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    max-width: 780px;
     margin-bottom: 32px;
   }
 
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 5vw, 72px);
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -1px;
-    color: var(--text);
-    max-width: 800px;
-    margin: 0 auto 28px;
-  }
-
   .hero-sub {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--gray);
-    font-weight: 400;
-    line-height: 1.6;
-    max-width: 560px;
-    margin: 0 auto;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 40px;
   }
 
-  /* SEPARATOR */
-  .separator {
-    width: 60px;
-    height: 1px;
-    background: var(--accent);
-    margin: 0 auto;
-  }
-
-  /* IDEAS SECTION */
-  .ideas-section {
-    padding: 100px 0;
-  }
-
-  .ideas-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 4vw, 48px);
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 64px;
-    letter-spacing: -0.5px;
-  }
-
-  .idea-card {
-    border-top: 1px solid var(--border);
-    padding: 40px 0;
+  .hero-cta {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--bg);
+    background: var(--text);
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 3px;
     transition: background 0.2s;
   }
+  .hero-cta:hover { background: #333; }
 
-  .idea-card:last-child {
-    border-bottom: 1px solid var(--border);
+  /* DIVIDER */
+  .divider {
+    margin: 80px 0;
+    border: none;
+    border-top: 1px solid var(--border);
   }
 
-  .idea-card:hover .idea-card-title {
-    color: var(--gray);
+  .divider-accent {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin: 80px 0;
   }
 
-  .idea-card-tag {
+  /* ENFOQUE */
+  .enfoque {
+    padding: 0 0 20px;
+  }
+
+  .enfoque-label {
     font-size: 11px;
     font-weight: 600;
     color: var(--accent);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 40px;
   }
 
-  .idea-card-title {
+  .enfoque-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 64px;
+  }
+
+  .enfoque-item-num {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--light-gray);
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+  }
+
+  .enfoque-item-text {
+    font-size: 16px;
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  .enfoque-item-text strong {
+    font-weight: 600;
+  }
+
+  /* CASOS */
+  .casos {
+    padding: 0 0 20px;
+  }
+
+  .casos-header {
+    margin-bottom: 16px;
+  }
+
+  .casos-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .casos-title {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: clamp(28px, 3.5vw, 40px);
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.3px;
     margin-bottom: 12px;
-    line-height: 1.2;
-    transition: color 0.2s;
   }
 
-  .idea-card-desc {
+  .casos-sub {
     font-size: 16px;
     color: var(--gray);
-    line-height: 1.7;
-    max-width: 640px;
+    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 56px;
   }
 
-  /* ESSAYS LINK */
-  .essays-card {
+  .caso {
     border-top: 1px solid var(--border);
+    padding: 44px 0;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .caso:last-of-type {
     border-bottom: 1px solid var(--border);
-    padding: 40px 0;
   }
 
-  .essays-card .idea-card-title a {
+  .caso-tag {
+    font-size: 11px;
+    font-weight: 600;
     color: var(--accent);
-    text-decoration: none;
-    transition: text-decoration 0.2s;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-top: 4px;
   }
 
-  .essays-card .idea-card-title a:hover {
-    text-decoration: underline;
+  .caso-content {}
+
+  .caso-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+    margin-bottom: 16px;
   }
 
-  /* CONTACT */
-  .contact-section {
-    padding: 120px 0;
+  .caso-desc {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.75;
+  }
+
+  /* ENSAYOS */
+  .ensayos {
+    padding: 80px 0;
     text-align: center;
   }
 
-  .contact-title {
+  .ensayos-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .ensayos-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .ensayos-text {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: 22px;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
+    line-height: 1.45;
+    margin-bottom: 28px;
+    letter-spacing: -0.2px;
   }
 
-  .contact-desc {
-    font-size: 18px;
-    color: var(--gray);
-    line-height: 1.7;
-    max-width: 480px;
-    margin: 0 auto 32px;
-  }
-
-  .contact-link {
-    font-size: 16px;
+  .ensayos-link {
+    font-size: 15px;
+    font-weight: 500;
     color: var(--accent);
     text-decoration: none;
-    font-weight: 500;
-    transition: text-decoration 0.2s;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+    padding-bottom: 1px;
   }
-  .contact-link:hover { text-decoration: underline; }
+  .ensayos-link:hover { border-color: var(--accent); }
+
+  /* CONTACTO */
+  .contacto {
+    padding: 80px 0 100px;
+    text-align: center;
+  }
+
+  .contacto-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .contacto-desc {
+    font-size: 17px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 440px;
+    margin: 0 auto 36px;
+  }
+
+  .contacto-btn {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--bg);
+    background: var(--text);
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 3px;
+    transition: background 0.2s;
+  }
+  .contacto-btn:hover { background: #333; }
 
   /* FOOTER */
   footer {
-    border-top: 1px solid var(--border);
-    padding: 40px 0;
+    border-top: 1px solid var(--border-light);
+    padding: 36px 0;
     text-align: center;
   }
 
   .footer-text {
-    font-size: 14px;
-    color: var(--gray);
+    font-size: 13px;
+    color: var(--light-gray);
   }
 
   /* MOBILE */
   @media (max-width: 768px) {
-    .container { padding: 0 24px; }
+    .wrap { padding: 0 24px; }
     .nav-inner { padding: 0 24px; }
     .nav-links { display: none; }
-    .hero { padding: 120px 0 60px; }
-    .ideas-section { padding: 80px 0; }
-    .idea-card-title { font-size: 24px; }
-    .contact-section { padding: 80px 0; }
-    footer { padding: 32px 0; }
+    .hero { padding: 110px 0 0; }
+    .hero-top { flex-direction: column; gap: 4px; margin-bottom: 36px; }
+    .enfoque-grid { grid-template-columns: 1fr; gap: 36px; }
+    .caso { grid-template-columns: 1fr; gap: 12px; padding: 32px 0; }
+    .caso-tag { padding-top: 0; }
+    .caso-title { font-size: 22px; }
+    .divider, .divider-accent { margin: 60px 0; }
+    .ensayos { padding: 60px 0; }
+    .contacto { padding: 60px 0 80px; }
   }
 </style>
 </head>
@@ -249,83 +372,132 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo">Óscar Pérez</a>
+    <a href="#" class="nav-name">Óscar Pérez</a>
     <div class="nav-links">
-      <a href="#ideas">Ideas</a>
+      <a href="#casos">Ideas</a>
+      <a href="#ensayos">Ensayos</a>
       <a href="#contacto">Contacto</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="container">
+<div class="wrap">
+
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-location">Tijuana, México</div>
-    <h1 class="hero-title">Los negocios no fallan por lo obvio. Fallan por lo invisible.</h1>
-    <p class="hero-sub">Psicología, incentivos y comportamiento humano aplicados a negocios reales.</p>
+    <div class="hero-top">
+      <span class="hero-name">Óscar Pérez</span>
+      <span class="hero-location">Tijuana, México</span>
+    </div>
+    <h1 class="hero-headline">Tu negocio tiene un problema que no estás viendo. Y te está costando dinero todos los días.</h1>
+    <p class="hero-sub">Aplico psicología, incentivos y comportamiento humano para encontrar las fricciones invisibles que frenan negocios reales.</p>
+    <a href="https://wa.me/526631261241?text=Hola%2C%20tengo%20una%20idea%20que%20me%20gustar%C3%ADa%20platicar" class="hero-cta" target="_blank">Hablemos por WhatsApp</a>
   </section>
-</div>
 
-<!-- SEPARATOR -->
-<div class="separator"></div>
+  <div class="divider-accent"></div>
 
-<!-- IDEAS -->
-<div class="container">
-  <section class="ideas-section" id="ideas">
-    <h2 class="ideas-title">Ideas</h2>
-
-    <div class="idea-card">
-      <div class="idea-card-tag">Distribución</div>
-      <div class="idea-card-title">6,000 personas a un kilómetro</div>
-      <p class="idea-card-desc">Un restaurante rodeado de miles de trabajadores que no saben que existe. El problema nunca fue la comida.</p>
+  <!-- ENFOQUE -->
+  <section class="enfoque">
+    <div class="enfoque-label">Cómo trabajo</div>
+    <div class="enfoque-grid">
+      <div>
+        <div class="enfoque-item-num">01</div>
+        <p class="enfoque-item-text"><strong>Observo lo que realmente pasa.</strong> No lo que tú crees que pasa. Cómo se comportan tus clientes, tus empleados, tu mercado. Lo que hacen importa más que lo que dicen.</p>
+      </div>
+      <div>
+        <div class="enfoque-item-num">02</div>
+        <p class="enfoque-item-text"><strong>Encuentro la fricción que no ves.</strong> Hay algo en tu negocio que frena las ventas, ahuyenta clientes o desperdicia esfuerzo. Casi nunca es lo que piensas.</p>
+      </div>
+      <div>
+        <div class="enfoque-item-num">03</div>
+        <p class="enfoque-item-text"><strong>Diseño con incentivos, no con suposiciones.</strong> Las personas responden a incentivos. Si entiendes qué motiva a cada parte, puedes rediseñar la situación a tu favor.</p>
+      </div>
+      <div>
+        <div class="enfoque-item-num">04</div>
+        <p class="enfoque-item-text"><strong>Analizo tu negocio, no "negocios en general".</strong> No doy consejos genéricos. Me siento contigo, entiendo tu operación, y te digo exactamente qué está pasando y qué hacer.</p>
+      </div>
     </div>
-
-    <div class="idea-card">
-      <div class="idea-card-tag">Incentivos</div>
-      <div class="idea-card-title">La cuota que bajó sola</div>
-      <p class="idea-card-desc">Cuando le bajas la cuota a tu vendedor y le sigues pagando igual, no es generosidad. Es que si él no gana, tú tampoco.</p>
-    </div>
-
-    <div class="idea-card">
-      <div class="idea-card-tag">Confianza</div>
-      <div class="idea-card-title">Capital sin destino</div>
-      <p class="idea-card-desc">Hay dinero buscando dónde ir y productores que lo necesitan. Se necesitan pero no se encuentran.</p>
-    </div>
-
-    <div class="idea-card">
-      <div class="idea-card-tag">Ecosistemas</div>
-      <div class="idea-card-title">La merma que alguien más vende</div>
-      <p class="idea-card-desc">Un bróker descuenta cajas a sus proveedores. Después abre su propia distribuidora y vende esa misma merma.</p>
-    </div>
-
-    <div class="idea-card">
-      <div class="idea-card-tag">Certeza</div>
-      <div class="idea-card-title">Lo que sobrevivió la pandemia</div>
-      <p class="idea-card-desc">Los restaurantes que parecían más frágiles fueron los que resistieron. La razón tiene que ver con lo que el cerebro busca cuando todo es incierto.</p>
-    </div>
-
-    <div class="idea-card">
-      <div class="idea-card-tag">Reciprocidad</div>
-      <div class="idea-card-title">La propina al inicio</div>
-      <p class="idea-card-desc">Dale la propina al mesero antes del servicio. No al final. Observa qué pasa.</p>
-    </div>
-
-    <div class="essays-card">
-      <div class="idea-card-tag">Ensayos</div>
-      <div class="idea-card-title"><a href="https://oscar-perez-essays.vercel.app/" target="_blank">Todos los ensayos →</a></div>
-      <p class="idea-card-desc">Negocios, sistemas y las conexiones invisibles que determinan quién gana y quién pierde.</p>
-    </div>
-
   </section>
-</div>
 
-<!-- CONTACTO -->
-<div class="container">
-  <section class="contact-section" id="contacto">
-    <h2 class="contact-title">Hablemos</h2>
-    <p class="contact-desc">Si algo en tu negocio no funciona como debería y no sabes por qué, escríbeme.</p>
-    <a href="https://wa.me/526631261241?text=Hola%2C%20tengo%20una%20idea%20que%20me%20gustar%C3%ADa%20platicar" class="contact-link" target="_blank">Escríbeme por WhatsApp →</a>
+  <hr class="divider">
+
+  <!-- CASOS -->
+  <section class="casos" id="casos">
+    <div class="casos-header">
+      <div class="casos-label">Así es como pienso</div>
+      <h2 class="casos-title">Casos reales</h2>
+      <p class="casos-sub">Cada uno de estos es un negocio real con un problema real. Lo que cambió fue la forma de verlo.</p>
+    </div>
+
+    <div class="caso">
+      <div class="caso-tag">Distribución</div>
+      <div class="caso-content">
+        <h3 class="caso-title">6,000 personas a un kilómetro y nadie sabe que existes</h3>
+        <p class="caso-desc">Un restaurante en una zona industrial con miles de trabajadores pasando a diario. Redes sociales no funcionan. Volantes se tiran. Página web nadie la visita. La solución no fue digital — fue crear una revista gratuita con publicidad de otros negocios de la zona. A cambio de aparecer, dejan ejemplares en sus locales. El nombre del restaurante está en la portada, dentro de docenas de negocios, frente a miles de personas. Distribución física donde tu cliente ya está.</p>
+      </div>
+    </div>
+
+    <div class="caso">
+      <div class="caso-tag">Relaciones comerciales</div>
+      <div class="caso-content">
+        <h3 class="caso-title">Las relaciones de negocio no fallan por números. Fallan por silencios.</h3>
+        <p class="caso-desc">Un socio que siente que debería quedarse con más. Un empleado que no rinde pero nunca le dijiste qué esperabas. Un proveedor que dejó de priorizar tu pedido y no sabes por qué. El problema casi nunca es la intención — es que las expectativas nunca se pusieron sobre la mesa. Lo que no se dice, tarde o temprano pasa factura.</p>
+      </div>
+    </div>
+
+    <div class="caso">
+      <div class="caso-tag">Fricción invisible</div>
+      <div class="caso-content">
+        <h3 class="caso-title">Hay producto, hay demanda, hay precio justo. Y aún así no sucede.</h3>
+        <p class="caso-desc">No porque sea difícil de ejecutar, sino porque alguien desconfía, interpreta de más o introduce ruido donde no lo hay. Algo que debería ser directo se vuelve complicado sin una razón técnica real. Muchas transacciones no fallan por falta de capacidad — fallan por fricción humana innecesaria. Y si no la ves, no la puedes quitar.</p>
+      </div>
+    </div>
+
+    <div class="caso">
+      <div class="caso-tag">Comportamiento del cliente</div>
+      <div class="caso-content">
+        <h3 class="caso-title">Por qué la comida mexicana sobrevivió la pandemia</h3>
+        <p class="caso-desc">Pensé que los restaurantes de comida mexicana iban a cerrar. Es comida que cualquiera puede hacer en casa. Pero pasó lo contrario. Sobrevivieron porque ya sabemos a qué saben. En medio de la incertidumbre, la gente no quiere arriesgarse a algo desconocido. Prefiere lo familiar. Si tu negocio vende certeza, tiene una ventaja que no se ve en los números.</p>
+      </div>
+    </div>
+
+    <div class="caso">
+      <div class="caso-tag">Incentivos</div>
+      <div class="caso-content">
+        <h3 class="caso-title">La propina al inicio</h3>
+        <p class="caso-desc">Cuando vayas a un evento y te asignen un mesero, no esperes al final para la propina. Dásela al inicio. Observa cómo cambia el trato. No es manipulación — es alinear incentivos desde el principio para que la relación no dependa del humor, del cansancio o de la buena intención de la otra parte. En los negocios funciona exactamente igual.</p>
+      </div>
+    </div>
+
+    <div class="caso">
+      <div class="caso-tag">Operación</div>
+      <div class="caso-content">
+        <h3 class="caso-title">De tomar todo personal a construir procesos que te liberan</h3>
+        <p class="caso-desc">Cuando era bróker de hortalizas, todo lo tomaba personal. Lo que decían de mí, lo que hacían, las miradas. Hasta que entendí algo viendo Narcos: el éxito de una operación no depende de las personas, depende de los procesos. Si tu negocio depende del humor de tu mejor empleado, no tienes un negocio — tienes un problema que aún no explota.</p>
+      </div>
+    </div>
   </section>
+
+  <div class="divider-accent"></div>
+
+  <!-- ENSAYOS -->
+  <section class="ensayos" id="ensayos">
+    <div class="ensayos-inner">
+      <div class="ensayos-label">Ir más profundo</div>
+      <p class="ensayos-text">52 ensayos sobre negocios, sistemas y las conexiones invisibles que determinan quién gana y quién pierde.</p>
+      <a href="https://oscar-perez-essays.vercel.app/" class="ensayos-link" target="_blank">Leer los ensayos →</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <h2 class="contacto-title">Si algo en tu negocio no funciona<br>y no sabes por qué, hablemos.</h2>
+    <p class="contacto-desc">Una conversación honesta puede cambiar la forma en que ves tu propio negocio.</p>
+    <a href="https://wa.me/526631261241?text=Hola%2C%20tengo%20una%20idea%20que%20me%20gustar%C3%ADa%20platicar" class="contacto-btn" target="_blank">Escríbeme por WhatsApp</a>
+  </section>
+
 </div>
 
 <footer>
